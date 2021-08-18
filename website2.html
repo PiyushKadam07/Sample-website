@@ -1,0 +1,148 @@
+<!-- 271 -->
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-compatible"  content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, inital-scale=1.0">
+        <title> Sample website - 2 </title>
+    </head>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #leftsidebar {
+            background-color: #D7E8D4;
+            margin: 0;
+            height: auto;
+            width: 30%;
+            padding: 5px;
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            width: 100%;
+        }
+
+        .navbar {
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            background-color: #9ACD32;
+            padding: 10px;
+        }
+
+        .mainsub {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+        }
+
+        .main1 {
+            background-color: #FFFFFF;
+            width: 70%;
+            height: calc(100vh - 200px);
+            padding: 10px;
+        }
+
+        .sidebar {
+            margin-left: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            display: none;
+        }
+
+        .openbtn {
+            width: 40px;
+        }
+
+        .rightsidebar {
+            background-color: #F5F5DC;
+            margin: 0;
+            width: 30%;
+            height: calc(100vh - 200px);
+            padding: 10px;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: #9ACD32;
+            margin: 0;
+            padding: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar, .mainsub, .footer{
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .rightsidebar, .main1{
+                width: 100%;
+            }
+            
+            #leftsidebar {
+                display: none;
+            }
+
+            .sidebar {
+                display: block;
+                margin-top: auto;
+            }
+        }
+    </style>
+
+    <body>
+        <div class = "main"> 
+            <div id = "leftsidebar">
+                <sidebar class = "nav">
+                    <h3>Nav</h3>
+                </sidebar>
+            </div>
+            <div class = "mainContainer">
+                <div class = "navbar">
+                    <h3>Header</h3>
+                    <div class = "sidebar">
+                        <button class = "openbtn" onClick = "w3_open()"> ☰ </button>
+                    </div>
+                </div>
+
+                <div class = "mainsub">
+                    <div class = "main1">
+                        <h3>Article</h3>
+                    </div>
+                    <sidebar class = "rightsidebar" >
+                        <h3>Aside</h3>
+                    </sidebar>
+                </div>
+                <div class = "footer">
+                    <h3>Footer</h3>
+                </div>    
+            </div>
+        </div>
+    
+    <script>
+        function w3_open() {
+            var x = document.getElementById("leftsidebar");
+            if ( x.style.display === 'none') {
+                x.style.display = 'block'
+            }
+            else {
+                x.style.display = 'none'
+            }
+        }
+    </script>
+    
+    </body>
+
+</html>
